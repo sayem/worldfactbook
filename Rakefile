@@ -17,11 +17,17 @@ Jeweler::Tasks.new do |gem|
   gem.name = "worldfactbook"
   gem.homepage = "http://github.com/sayem/worldfactbook"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "mail@sayemislam.com"
+  gem.summary = %Q{Easily access all the statistics and economic data available on the CIA World Factbook.}
+  gem.description = %Q{Easily use Ruby or the command line to look up any country on the CIA World Factbook.}
+  gem.email = "sayem.islam@gmail.com"
   gem.authors = ["Sayem Islam"]
-  # dependencies defined in Gemfile
+
+  # Dependencies
+  gem.add_dependency('nokogiri')
+   
+  # Development dependencies
+  gem.add_development_dependency('fakeweb')
+  gem.add_development_dependency('rspec')
 end
 Jeweler::RubygemsDotOrgTasks.new
 
