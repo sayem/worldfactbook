@@ -5,6 +5,7 @@ require 'rubygems'
 require 'nokogiri'
 
 require 'worldfactbook/country'
+require 'worldfactbook/country_code'
 
 module Worldfactbook
   VERSION = File.open(File.join(File.dirname(__FILE__), '..', 'VERSION'), 'r') { |f| f.read.strip }

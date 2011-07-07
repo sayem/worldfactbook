@@ -15,7 +15,9 @@ doc = Nokogiri::HTML(open("https://www.cia.gov/library/publications/the-world-fa
 
 
 # GEOGRAPHY
-# location = doc.css('#CollapsiblePanel1_Geo tr:nth-child(2) .category_data')
+ location = doc.css('#CollapsiblePanel1_Geo tr:nth-child(2) .category_data')
+
+puts location
 # coordinates = doc.css('#CollapsiblePanel1_Geo tr:nth-child(5) .category_data')
 
 # area = doc.css('#CollapsiblePanel1_Geo tr:nth-child(11) #data')
