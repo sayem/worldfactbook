@@ -1,7 +1,7 @@
 
 require 'open-uri'
 require 'nokogiri'
-doc = Nokogiri::HTML(open("http://rubyworldfactbook.com/geos/us.html"))
+doc = Nokogiri::HTML(open("http://rubyworldfactbook.com/geos/ch.html"))
 
 
 # flag = doc.css('.flag_border')

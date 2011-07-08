@@ -145,19 +145,35 @@ module Worldfactbook
     end
 
     def ethnic_groups
-      doc.css('#CollapsiblePanel1_People tr:nth-child(59) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if doc.to_s.match("Definitions and Notes: Major infectious diseases")
+        doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip        
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(59) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def religions
-      doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if doc.to_s.match("Definitions and Notes: Major infectious diseases")
+        doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def languages
-      doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if doc.to_s.match("Definitions and Notes: Major infectious diseases")
+        doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def literacy
-      doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if doc.to_s.match("Definitions and Notes: Major infectious diseases")
+        doc.css('#CollapsiblePanel1_People tr:nth-child(71) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
 
