@@ -6,10 +6,7 @@ module Worldfactbook
 
     def initialize(country)
       @country = country
-    end
-
-    def code
-      codes = { 'world' => 'xx',
+      @codes = { 'world' => 'xx',
                 'afghanistan' => 'af',
                 'akrotiri' => 'ax',
                 'albania' => 'al',
@@ -284,16 +281,21 @@ module Worldfactbook
                 'yemen' => 'ym',
                 'zambia' => 'za',
                 'zimbabwe' => 'zi',
-                'european union' => 'ee'
-              }
+                'european union' => 'ee' }
+    end
 
-      if codes.has_key?(@country)
-        codes.fetch(@country) 
-      elsif codes.has_value?(@country)
+    def code
+      if @codes.has_key?(@country)
+        @codes.fetch(@country) 
+      elsif @codes.has_value?(@country)
         return @country
       else
         raise NoCountryAvailable.new("#{@country} isn't available in the CIA World Factbook.")
       end
+    end
+
+    def list
+      return @codes
     end
   end
 
