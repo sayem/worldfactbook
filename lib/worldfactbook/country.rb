@@ -24,8 +24,8 @@ module Worldfactbook
       doc.css('#region-content td tr:nth-child(2) td:nth-child(2) img:nth-child(1)').to_s.gsub(/\.\.\/graphics/,'http://rubyworldfactbook.com/graphics').gsub(/"/,'').scan(/http\S+/)[0]
     end
 
-    def map_world  # need to check this with others ---- doesnt work for US, maybe just take it out, otherwise customize it
-      doc.css('#noa_smmapborder').to_s.gsub(/\.\.\/graphics/,'http://rubyworldfactbook.com/graphics').gsub(/"/,'').scan(/http\S+/)[0]
+    def map_world
+      return "http://rubyworldfactbook.com/graphics/maps/newmaps/#{@code}-map.gif"
     end
 
     def intro
@@ -33,29 +33,29 @@ module Worldfactbook
     end
 
     def geography
-      return [self.location, self.area, self.area_comparative, self.climate, self.terrain, self.elevation, self.natural_resources]
+      return { 'location' => self.location, 'area' => self.area, 'area_comparative' => self.area_comparative, 'climate' => self.climate, 'terrain' => self.terrain, 'elevation' => self.elevation, 'natural_resources' => self.natural_resources }
     end
 
     def people
-      return [self.population, self.population_growth, self.ethnic_groups, self.religions, self.languages, self.sex_ratio, self.age_structure, self.median_age, self.birth_rate, self.death_rate, self.net_migration, self.urbanization, self.major_cities,  self.infant_mortality, self.life_expectancy, self.fertility_rate, self.literacy]
+      return { 'population' => self.population, 'population_growth' => self.population_growth, 'ethnic_groups' => self.ethnic_groups, 'religions' => self.religions, 'languages' => self.languages, 'sex_ratio' => self.sex_ratio, 'age_structure' => self.age_structure, 'median_age' => self.median_age, 'birth_rate' => self.birth_rate, 'death_rate' => self.death_rate, 'net_migration' => self.net_migration, 'urbanization' => self.urbanization, 'major_cities' => self.major_cities, 'infant_mortality' => self.infant_mortality, 'life_expectancy' => self.life_expectancy, 'fertility_rate' => self.fertility_rate, 'literacy' => self.literacy }
     end
 
     def government
-      return [self.government_type, self.capital, self.independence, self.legal, self.executive, self.legislative, self.judicial, self.political]
+      return { 'government_type' => government_type, 'capital' => self.capital, 'independence' => self.independence, 'legal' => self.legal, 'executive' => self.executive, 'legislative' => self.legislative, 'judicial' => self.judicial, 'political' => self.political }
     end
 
     def economy   
-      return [self.gdp, self.gdp_ppp, self.gdp_growth, self.gdp_capita, self.gdp_sectors, self.labor, self.unemployment, self.inflation, self.markets, self.exports, self.imports, self.debt, self.military]
+      return { 'gdp' => self.gdp, 'gdp_ppp' => self.gdp_ppp, 'gdp_growth' => self.gdp_growth, 'gdp_capita' => self.gdp_capita, 'gdp_sectors' => self.gdp_sectors, 'labor' => self.labor, 'unemployment' => self.unemployment, 'inflation' => self.inflation, 'markets' => self.markets, 'exports' => self.exports, 'imports' => self.imports, 'debt' => self.debt, 'military' => self.military }
 
       # economy_overview not included
     end
 
     def communications
-      return [self.telephones, self.cellphones, self.internet_users, self.internet_hosts]
+      return { 'telephones' => self.telephones, 'cellphones' => self.cellphones, 'internet_users' => self.internet_users, 'internet_hosts' => self.internet_hosts }
     end
 
     def global
-      return [self.disputes, self.refugees, self.drugs]
+      return { 'disputes' => self.disputes, 'refugees' => self.refugees, 'drugs' => self.drugs }
     end
 
 
