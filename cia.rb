@@ -97,3 +97,4 @@ doc = Nokogiri::HTML(open("http://rubyworldfactbook.com/geos/ch.html"))
 # disputes = doc.css('#CollapsiblePanel1_Issues tr:nth-child(2) .category_data')
 # refugees = doc.css('#CollapsiblePanel1_Issues tr:nth-child(5) .category_data')
 # drugs = doc.css('#CollapsiblePanel1_Issues tr:nth-child(8) .category_data')
+

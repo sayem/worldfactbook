@@ -10,6 +10,11 @@ module Worldfactbook
 
     def help
       # show all available commands and definitions too
+
+
+
+
+
     end
 
     def countries
@@ -117,36 +122,68 @@ module Worldfactbook
     end
 
     def net_migration
-      doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['xx'].include?(@code)
+        return nil
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def urbanization
-      doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee'].include?(@code)
+        return nil
+      elsif ['xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
-
+    
     def major_cities
-      doc.css('#CollapsiblePanel1_People tr:nth-child(26) .category_data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee', 'xx'].include?(@code)
+        return nil
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(26) .category_data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def sex_ratio
-      doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee', 'xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def infant_mortality
-      doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee', 'xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(26) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def life_expectancy
-      doc.css('#CollapsiblePanel1_People tr:nth-child(35) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee', 'xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(35) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def fertility_rate
-      doc.css('#CollapsiblePanel1_People tr:nth-child(38) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if ['ee', 'xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_People tr:nth-child(38) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def ethnic_groups
       if doc.to_s.match("Definitions and Notes: Major infectious diseases")
         doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip        
+      elsif ['ee', 'xx'].include?(@code)
+        return nil
       else
         doc.css('#CollapsiblePanel1_People tr:nth-child(59) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
@@ -155,6 +192,10 @@ module Worldfactbook
     def religions
       if doc.to_s.match("Definitions and Notes: Major infectious diseases")
         doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(50) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['ee'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(44) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
         doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
@@ -163,6 +204,10 @@ module Worldfactbook
     def languages
       if doc.to_s.match("Definitions and Notes: Major infectious diseases")
         doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(53) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['ee'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(47) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
         doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
@@ -171,6 +216,10 @@ module Worldfactbook
     def literacy
       if doc.to_s.match("Definitions and Notes: Major infectious diseases")
         doc.css('#CollapsiblePanel1_People tr:nth-child(71) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['xx'].include?(@code)
+        doc.css('#CollapsiblePanel1_People tr:nth-child(56) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      elsif ['ee'].include?(@code)
+        return nil
       else
         doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
@@ -282,7 +331,13 @@ module Worldfactbook
     end
 
     def internet_users
-      doc.css('#CollapsiblePanel1_Comm tr:nth-child(20) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if @code == 'xx'
+        doc.css('#CollapsiblePanel1_Comm tr:nth-child(11) .category_data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip        
+      elsif @code == 'ee'
+        doc.css('#CollapsiblePanel1_Comm tr:nth-child(17) .category_data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      else
+        doc.css('#CollapsiblePanel1_Comm tr:nth-child(20) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      end
     end
 
     def internet_hosts
