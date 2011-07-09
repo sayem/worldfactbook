@@ -15,6 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
+  gem.executables = ['worldfactbook']
   gem.name = "worldfactbook"
   gem.homepage = "http://github.com/sayem/worldfactbook"
   gem.license = "MIT"

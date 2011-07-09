@@ -1,5 +1,4 @@
 module Worldfactbook
-
   class Country
     attr_accessor :country
 
@@ -9,12 +8,7 @@ module Worldfactbook
     end
 
     def help
-      # show all available commands and definitions too
-
-
-
-
-
+      return 'http://github.com/sayem/worldfactbook' # include a wiki listing and detailing all the methods
     end
 
     def countries
