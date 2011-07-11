@@ -1,5 +1,3 @@
-require 'optparse'
-
 module Worldfactbook
   class CLI
     def self.execute(stdout, arguments=[])
@@ -11,8 +9,10 @@ module Worldfactbook
       @stdout.puts
 
       if @country == 'help'
-        @stdout.puts Country.new('xx').help
+        @stdout.puts Country.new('xx').help  
       elsif @country == 'countries'
+        @stdout.puts "List of available countries (input 'worldfactbook [country or code]' to fetch data for that country):"
+        @stdout.puts
         @stdout.puts CountryCode.new('xx').list
       elsif @data
         @code = CountryCode.new(@country).code
