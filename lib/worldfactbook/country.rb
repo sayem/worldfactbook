@@ -8,7 +8,7 @@ module Worldfactbook
     end
 
     def help
-      return 'http://github.com/sayem/worldfactbook' # include a wiki listing and detailing all the methods
+      return 'http://github.com/sayem/worldfactbook' # include rdoc/wiki listing of all the commands
     end
 
     def countries
