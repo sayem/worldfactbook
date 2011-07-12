@@ -1,12 +1,12 @@
 = Worldfactbook
 
-Worldfactbook fetches data on countries for you from the CIA World Factbook[https://www.cia.gov/library/publications/the-world-factbook/index.html].
+Worldfactbook fetches data on countries for you from the {CIA World Factbook}[https://www.cia.gov/library/publications/the-world-factbook/index.html].
 
     $ sudo gem install worldfactbook
 
 = Usage
 
-Complete Worldfactbook documentation at: http://github.com/sayem/worldfactbook/wiki
+Complete Worldfactbook documentation available {on the wiki.}[http://github.com/sayem/worldfactbook/wiki]
 
 == Contributing to worldfactbook
  
@@ -24,7 +24,7 @@ Complete Worldfactbook documentation at: http://github.com/sayem/worldfactbook/w
 
 Copyright © 2011:
 
-Sayem Islam[http://sayemislam.com]
+{Sayem Islam}[http://sayemislam.com]
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
