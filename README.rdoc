@@ -1,6 +1,12 @@
-= worldfactbook
+= Worldfactbook
 
-Description goes here.
+Worldfactbook fetches data on countries for you from the CIA World Factbook[https://www.cia.gov/library/publications/the-world-factbook/index.html].
+
+    $ sudo gem install worldfactbook
+
+= Usage
+
+Complete Worldfactbook documentation at: http://github.com/sayem/worldfactbook/wiki
 
 == Contributing to worldfactbook
  
@@ -12,14 +18,13 @@ Description goes here.
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-LICENSE
--------
+== LICENSE
 
 (The MIT License)
 
 Copyright © 2011:
 
-[Sayem Islam](http://sayemislam.com)
+Sayem Islam[http://sayemislam.com]
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
