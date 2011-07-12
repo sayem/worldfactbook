@@ -6,13 +6,12 @@ Worldfactbook fetches data on countries for you from the {CIA World Factbook}[ht
 
 = Usage
 
-Complete Worldfactbook documentation available {on the wiki.}[http://github.com/sayem/worldfactbook/wiki]
+Please see the complete Worldfactbook documentation {on the wiki}[http://github.com/sayem/worldfactbook/wiki].
 
-Library Usage: 
+Library usage: 
 
     require 'worldfactbook'
-    w = Worldfactbook::Country.new('us')
-    w = Worldfactbook::Country.new('united states')
+    w = Worldfactbook::Country.new('united states') OR w = Worldfactbook::Country.new('us')
    
     w.population => "313,232,044 (July 2011 est.) country comparison to the world: 3"
 
@@ -23,7 +22,16 @@ Library Usage:
                       million (2009)"
 
     w.internet_users => "245 million (2009) country comparison to the world: 2"
- 
+
+Command line usage:
+
+    $ worldfactbook japan => returns the location, major cities, population, GDP, unemployment rate, and more for Japan
+
+    $ worldfactbook canada population => "34,030,589 (July 2011 est.) country comparison to the world: 37"
+
+    $ worldfactbook help => lists all the command line options
+
+    $ worldfactbook countries => lists all the countries available along with their two-letter country codes
 
 == Contributing to Worldfactbook
  
