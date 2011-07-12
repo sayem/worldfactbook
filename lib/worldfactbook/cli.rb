@@ -2,13 +2,25 @@ module Worldfactbook
   class CLI
     def self.execute(stdout, arguments=[])
       @stdout = stdout
-      @country = arguments[0]
-      @data = arguments[1]
-
+      if !arguments.empty? 
+        query = arguments.join(" ").strip
+        if !['help', 'countries'].include?(query)
+          begin
+            @country = query
+            Country.new(query)
+          rescue Worldfactbook::NoCountryAvailable
+            @data = arguments.pop
+            query = arguments.join(" ").strip
+            @country = query
+            Country.new(query)
+          end
+        end
+      end
+      
       @stdout.puts "Worldfactbook | https://github.com/sayem/worldfactbook"
       @stdout.puts
 
-      if @country == 'help'
+      if arguments[0] == 'help'
         @stdout.puts "'worldfactbook countries' => lists all the countries available in the CIA World Factbook, along with their two-letter country codes"       
         @stdout.puts
         @stdout.puts "'worldfactbook [country or code]' => fetches the location, major cities, date of independence, population, languages, ethnic groups, religions, age structure, literacy rate, GDP, GDP (PPP), GDP growth, GDP sectors, debt, unemployment, inflation, telephone users, mobile phone users, and internet users for the given country"
@@ -17,12 +29,11 @@ module Worldfactbook
         @stdout.puts
         @stdout.puts "List of available country methods can be found at: https://github.com/sayem/worldfactbook/wiki"
         @stdout.puts
-      elsif @country == 'countries'
+      elsif arguments[0] == 'countries'
         @stdout.puts "List of available countries (input 'worldfactbook [country or code]' to fetch data for that country):"
         @stdout.puts
         @stdout.puts CountryCode.new('xx').list
       elsif @data
-        @code = CountryCode.new(@country).code
         @stdout.puts Country.new(@country).send(@data)
         @stdout.puts
       elsif @country
@@ -49,7 +60,7 @@ module Worldfactbook
         @stdout.puts "Mobile Phone Users: #{Country.new(@country).cellphones}"
         @stdout.puts "Internet Users: #{Country.new(@country).internet_users}"
         @stdout.puts
-      end              
+      end
     end
   end
 end
