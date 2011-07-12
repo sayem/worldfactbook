@@ -227,30 +227,54 @@ module Worldfactbook
     end
 
     def independence
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(17) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(17) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(14) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
     def legal
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(26) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(26) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(23) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
     def executive
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text.squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(32) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
     def legislative
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
     def judicial
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
     def political
-      doc.css('#CollapsiblePanel1_Govt tr:nth-child(44) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      if doc.to_s.match("Definitions and Notes: Dependent areas")
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(44) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text.squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
     end
 
-
+    
     ## ECONOMY ##    
 
     def economy_overview 
