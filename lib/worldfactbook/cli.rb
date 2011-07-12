@@ -2,7 +2,7 @@ module Worldfactbook
   class CLI
     def self.execute(stdout, arguments=[])
       @stdout = stdout
-      if !arguments.empty? 
+      if !arguments.empty?
         query = arguments.join(" ").strip
         if !['help', 'countries'].include?(query)
           begin
