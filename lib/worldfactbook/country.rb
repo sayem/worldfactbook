@@ -7,10 +7,6 @@ module Worldfactbook
       @code = CountryCode.new(@country).code
     end
 
-    def help
-      return 'http://github.com/sayem/worldfactbook'
-    end
-
     def countries
       CountryCode.new(@country).list
     end
@@ -339,7 +335,7 @@ module Worldfactbook
     end
 
 
-    ## GLOBAL ##    
+    ## GLOBAL ISSUES ##    
 
     def disputes
       doc.css('#CollapsiblePanel1_Issues tr:nth-child(2) .category_data').text
