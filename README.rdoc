@@ -2,7 +2,13 @@
 
 Worldfactbook fetches data on countries for you from the {CIA World Factbook}[https://www.cia.gov/library/publications/the-world-factbook/index.html].
 
-    $ sudo gem install worldfactbook
+To install:
+
+   $ sudo gem install worldfactbook
+
+Or in Bundler:
+
+   gem "worldfactbook" 
 
 = Usage
 
