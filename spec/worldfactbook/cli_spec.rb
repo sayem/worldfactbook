@@ -61,4 +61,12 @@ describe Worldfactbook::CLI, "execute" do
     end
   end
 
+  describe "country lookup parameter" do
+    it "should detect parameter" do
+      expect {
+        Worldfactbook::CLI.execute(@stdout_io, ['united states population'])
+      }.should raise_error(Worldfactbook::NoCountryAvailable)
+    end
+  end
+  
 end
