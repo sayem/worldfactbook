@@ -10,6 +10,8 @@ Or in Bundler:
 
    gem "worldfactbook" 
 
+Note: Worldfactbook requires {Nokogiri}[http://nokogiri.org] as a dependency. If you encounter any issues with this gem, it's likely because of the libraries that need to be configured or updated for using Nokogiri. Please refer to its {installation guide}[http://nokogiri.org/tutorials/installing_nokogiri.html] for help.
+
 = Usage
 
 Please see the complete Worldfactbook documentation {on the wiki}[http://github.com/sayem/worldfactbook/wiki].
