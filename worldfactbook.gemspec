@@ -5,24 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = %q{worldfactbook}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sayem Islam"]
-  s.date = %q{2011-07-14}
+  s.date = %q{2011-08-02}
   s.description = %q{Easily use Ruby or the command line to look up any country on the CIA World Factbook.}
   s.email = %q{sayem.islam@gmail.com}
   s.executables = ["worldfactbook"]
   s.extra_rdoc_files = [
-    "README.rdoc",
-    "TODO"
+    "README.rdoc"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
     "README.rdoc",
     "Rakefile",
-    "TODO",
     "VERSION",
     "bin/worldfactbook",
     "lib/worldfactbook.rb",

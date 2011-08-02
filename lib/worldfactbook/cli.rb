@@ -6,13 +6,11 @@ module Worldfactbook
         query = arguments.join(" ").strip
         if !['help', 'countries'].include?(query)
           begin
-            @country = query
-            Country.new(query)
+            @country = Country.new(query)
           rescue Worldfactbook::NoCountryAvailable
             @data = arguments.pop
             query = arguments.join(" ").strip
-            @country = query
-            Country.new(query)
+            @country = Country.new(query)
           end
         end
       end
@@ -34,31 +32,31 @@ module Worldfactbook
         @stdout.puts
         @stdout.puts CountryCode.new('xx').list
       elsif @data
-        @stdout.puts Country.new(@country).send(@data)
+        @stdout.puts @country.send(@data)
         @stdout.puts
       elsif @country
-        @stdout.puts "Location: #{Country.new(@country).location}"
-        @stdout.puts "Major Cities: #{Country.new(@country).major_cities}"
-        @stdout.puts "Independence: #{Country.new(@country).independence}"
+        @stdout.puts "Location: #{@country.location}"
+        @stdout.puts "Major Cities: #{@country.major_cities}"
+        @stdout.puts "Independence: #{@country.independence}"
         @stdout.puts
-        @stdout.puts "Population: #{Country.new(@country).population}"
-        @stdout.puts "Languages: #{Country.new(@country).languages}"
-        @stdout.puts "Ethnic Groups: #{Country.new(@country).ethnic_groups}"
-        @stdout.puts "Religions: #{Country.new(@country).religions}"
-        @stdout.puts "Age Structure: #{Country.new(@country).age_structure}"
-        @stdout.puts "Literacy: #{Country.new(@country).literacy}"
+        @stdout.puts "Population: #{@country.population}"
+        @stdout.puts "Languages: #{@country.languages}"
+        @stdout.puts "Ethnic Groups: #{@country.ethnic_groups}"
+        @stdout.puts "Religions: #{@country.religions}"
+        @stdout.puts "Age Structure: #{@country.age_structure}"
+        @stdout.puts "Literacy: #{@country.literacy}"
         @stdout.puts
-        @stdout.puts "GDP: #{Country.new(@country).gdp}"
-        @stdout.puts "GDP (PPP): #{Country.new(@country).gdp_ppp}"
-        @stdout.puts "GDP growth: #{Country.new(@country).gdp_growth}"
-        @stdout.puts "GDP sectors: #{Country.new(@country).gdp_sectors}"
-        @stdout.puts "Debt: #{Country.new(@country).debt}"
-        @stdout.puts "Unemployment: #{Country.new(@country).unemployment}"
-        @stdout.puts "Inflation: #{Country.new(@country).inflation}"
+        @stdout.puts "GDP: #{@country.gdp}"
+        @stdout.puts "GDP (PPP): #{@country.gdp_ppp}"
+        @stdout.puts "GDP growth: #{@country.gdp_growth}"
+        @stdout.puts "GDP sectors: #{@country.gdp_sectors}"
+        @stdout.puts "Debt: #{@country.debt}"
+        @stdout.puts "Unemployment: #{@country.unemployment}"
+        @stdout.puts "Inflation: #{@country.inflation}"
         @stdout.puts
-        @stdout.puts "Telephone Users: #{Country.new(@country).telephones}"
-        @stdout.puts "Mobile Phone Users: #{Country.new(@country).cellphones}"
-        @stdout.puts "Internet Users: #{Country.new(@country).internet_users}"
+        @stdout.puts "Telephone Users: #{@country.telephones}"
+        @stdout.puts "Mobile Phone Users: #{@country.cellphones}"
+        @stdout.puts "Internet Users: #{@country.internet_users}"
         @stdout.puts
       end
     end
