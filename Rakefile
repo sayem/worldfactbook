@@ -26,7 +26,7 @@ Jeweler::Tasks.new do |gem|
 
   # Dependencies
   gem.add_dependency('nokogiri')
-   
+
   # Development dependencies
   gem.add_development_dependency('fakeweb')
   gem.add_development_dependency('rspec')

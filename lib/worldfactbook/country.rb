@@ -1,6 +1,6 @@
 module Worldfactbook
   require 'iconv'
-  
+
   class Country
     attr_accessor :country, :wfb_location
 
@@ -44,7 +44,7 @@ module Worldfactbook
       return { 'government_type' => government_type, 'capital' => self.capital, 'independence' => self.independence, 'legal' => self.legal, 'executive' => self.executive, 'legislative' => self.legislative, 'judicial' => self.judicial, 'political' => self.political }
     end
 
-    def economy   
+    def economy
       return { 'gdp' => self.gdp, 'gdp_ppp' => self.gdp_ppp, 'gdp_growth' => self.gdp_growth, 'gdp_capita' => self.gdp_capita, 'gdp_sectors' => self.gdp_sectors, 'labor' => self.labor, 'unemployment' => self.unemployment, 'inflation' => self.inflation, 'markets' => self.markets, 'exports' => self.exports, 'imports' => self.imports, 'debt' => self.debt, 'military' => self.military }
 
       # economy_overview not included
@@ -133,7 +133,7 @@ module Worldfactbook
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
-    
+
     def major_cities
       if ['ee', 'xx'].include?(@code)
         return nil
@@ -176,7 +176,7 @@ module Worldfactbook
 
     def ethnic_groups
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Major infectious diseases")
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip        
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       elsif ['ee', 'xx'].include?(@code)
         return nil
       else
@@ -221,12 +221,12 @@ module Worldfactbook
     end
 
 
-    ## GOVERNMENT ##    
+    ## GOVERNMENT ##
 
     def government_type
       (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(5) .category_data').text + ' ')[0..-2])
     end
-    
+
     def capital
       (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(8) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
@@ -279,10 +279,10 @@ module Worldfactbook
       end
     end
 
-    
-    ## ECONOMY ##    
 
-    def economy_overview 
+    ## ECONOMY ##
+
+    def economy_overview
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(2) .category_data').text + ' ')[0..-2])
     end
 
@@ -306,15 +306,15 @@ module Worldfactbook
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(17) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
-    def labor 
+    def labor
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(20) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
-    def unemployment 
+    def unemployment
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(26) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
-    def inflation 
+    def inflation
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(47) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
@@ -322,11 +322,11 @@ module Worldfactbook
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(65) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
-    def exports 
+    def exports
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(122) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
-    def imports 
+    def imports
       (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(131) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
@@ -339,7 +339,7 @@ module Worldfactbook
     end
 
 
-    ## COMMUNICATIONS ##    
+    ## COMMUNICATIONS ##
 
     def telephones
       (@ic.iconv(doc.css('#CollapsiblePanel1_Comm tr:nth-child(2) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
@@ -351,7 +351,7 @@ module Worldfactbook
 
     def internet_users
       if @code == 'xx'
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Comm tr:nth-child(11) .category_data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip        
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Comm tr:nth-child(11) .category_data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       elsif @code == 'ee'
         (@ic.iconv(doc.css('#CollapsiblePanel1_Comm tr:nth-child(17) .category_data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
@@ -364,7 +364,7 @@ module Worldfactbook
     end
 
 
-    ## GLOBAL ISSUES ##    
+    ## GLOBAL ISSUES ##
 
     def disputes
       (@ic.iconv(doc.css('#CollapsiblePanel1_Issues tr:nth-child(2) .category_data').text + ' ')[0..-2])
@@ -383,7 +383,7 @@ module Worldfactbook
 
     def doc
       @document ||= Nokogiri::HTML(open("#{@wfb_location}/geos/#{@code}.html"))
-    end    
+    end
   end
 
 end

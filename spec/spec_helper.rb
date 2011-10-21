@@ -40,7 +40,7 @@ unless ENV['LIVE_TEST']
   begin
     require 'rubygems'
     require 'fakeweb'
-    
+
     FakeWeb.allow_net_connect = false
     WORLDFACTBOOK_SAMPLES.each do |url, response|
       FakeWeb.register_uri(:get, url, :response => read_fixture(response))

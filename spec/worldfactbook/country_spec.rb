@@ -13,7 +13,7 @@ describe "Worldfactbook::Country" do
       # Get 'united states'
       @country = Worldfactbook::Country.new('united states')
     end
-  
+
     it "should list available countries" do
       @country.countries.should be_a(Hash)
     end
@@ -32,7 +32,7 @@ describe "Worldfactbook::Country" do
 
     it "should return the geography methods" do
       geography = @country.geography
-   
+
       geography.should be_a(Hash)
       geography.should include('location')
       geography.should include('area')
@@ -45,7 +45,7 @@ describe "Worldfactbook::Country" do
 
     it "should return the people methods" do
       people = @country.people
-   
+
       people.should be_a(Hash)
       people.should include('population')
       people.should include('population_growth')
@@ -155,7 +155,7 @@ describe "Worldfactbook::Country" do
     it "should find the population" do
       @country.population.should =~ /country comparison/
     end
-    
+
     it "should find the age_structure" do
       @country.age_structure.should =~ /0-14 years/
     end
@@ -221,7 +221,7 @@ describe "Worldfactbook::Country" do
     end
 
 
-    ## GOVERNMENT ##    
+    ## GOVERNMENT ##
 
     it "should find the government type" do
       @country.government_type.should =~ /federal republic/
@@ -256,7 +256,7 @@ describe "Worldfactbook::Country" do
     end
 
 
-    ## ECONOMY ##    
+    ## ECONOMY ##
 
     it "should find the economy overview" do
       @country.economy_overview.should =~ /economy/
@@ -315,7 +315,7 @@ describe "Worldfactbook::Country" do
     end
 
 
-    ## COMMUNICATIONS ##    
+    ## COMMUNICATIONS ##
 
     it "should find telephones" do
       @country.telephones.should =~ /million/
@@ -334,7 +334,7 @@ describe "Worldfactbook::Country" do
     end
 
 
-    ## GLOBAL ISSUES ##    
+    ## GLOBAL ISSUES ##
 
     it "should find disputes" do
       @country.disputes.should =~ /US/

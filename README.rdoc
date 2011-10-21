@@ -8,7 +8,7 @@ To install:
 
 Or in Bundler:
 
-   gem "worldfactbook" 
+   gem "worldfactbook"
 
 Note: Worldfactbook requires {Nokogiri}[http://nokogiri.org] as a dependency. If you encounter any issues with this gem, it's likely because of the libraries that need to be configured or updated for using Nokogiri. Please refer to its {installation guide}[http://nokogiri.org/tutorials/installing_nokogiri.html] for help.
 
@@ -16,17 +16,17 @@ Note: Worldfactbook requires {Nokogiri}[http://nokogiri.org] as a dependency. If
 
 Please see the complete Worldfactbook documentation {on the wiki}[http://github.com/sayem/worldfactbook/wiki].
 
-Library usage: 
+Library usage:
 
     require 'worldfactbook'
     w = Worldfactbook::Country.new('united states') OR w = Worldfactbook::Country.new('us')
-   
+
     w.population => "313,232,044 (July 2011 est.) country comparison to the world: 3"
 
     w.gdp => "$14.66 trillion (2010 est.)"
 
     w.major_cities => "New York-Newark 19.3 million; Los Angeles-Long Beach-Santa Ana 12.675 million;
-                      Chicago 9.134 million; Miami 5.699 million; WASHINGTON, D.C. (capital) 4.421 
+                      Chicago 9.134 million; Miami 5.699 million; WASHINGTON, D.C. (capital) 4.421
                       million (2009)"
 
     w.internet_users => "245 million (2009) country comparison to the world: 2"
@@ -42,7 +42,7 @@ Command line usage:
     $ worldfactbook countries => lists all the countries available along with their two-letter country codes
 
 == Contributing to Worldfactbook
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
