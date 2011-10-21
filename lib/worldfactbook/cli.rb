@@ -14,16 +14,16 @@ module Worldfactbook
           end
         end
       end
-      
+
       @stdout.puts "Worldfactbook | https://github.com/sayem/worldfactbook"
       @stdout.puts
 
       if arguments[0] == 'help'
-        @stdout.puts "'worldfactbook countries' => lists all the countries available in the CIA World Factbook, along with their two-letter country codes"       
+        @stdout.puts "'worldfactbook countries' => lists all the countries available in the CIA World Factbook, along with their two-letter country codes"
         @stdout.puts
         @stdout.puts "'worldfactbook [country or code]' => fetches the location, major cities, date of independence, population, languages, ethnic groups, religions, age structure, literacy rate, GDP, GDP (PPP), GDP growth, GDP sectors, debt, unemployment, inflation, telephone users, mobile phone users, and internet users for the given country"
         @stdout.puts
-        @stdout.puts "'worldfactbook [country or code] [parameter]' => returns information from the given method for the country (e.g. 'worldfactbook united states population')"              
+        @stdout.puts "'worldfactbook [country or code] [parameter]' => returns information from the given method for the country (e.g. 'worldfactbook united states population')"
         @stdout.puts
         @stdout.puts "List of available country methods can be found at: https://github.com/sayem/worldfactbook/wiki"
         @stdout.puts

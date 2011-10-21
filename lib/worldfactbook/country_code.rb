@@ -26,7 +26,7 @@ module Worldfactbook
                 'bahamas' => 'bf',
                 'the bahamas' => 'bf',
                 'bahrain' => 'ba',
-                'bangladesh' => 'bg',                
+                'bangladesh' => 'bg',
                 'barbados' => 'bb',
                 'belarus' => 'bo',
                 'belgium' => 'be',
@@ -84,7 +84,7 @@ module Worldfactbook
                 'germany' => 'gm',
                 'ghana' => 'gh',
                 'greece' => 'gr',
-                'greenland' => 'gl',        
+                'greenland' => 'gl',
                 'grenada' => 'gj',
                 'guatemala' => 'gt',
                 'guinea' => 'gv',
@@ -166,7 +166,7 @@ module Worldfactbook
                 'rwanda' => 'rw',
                 'saint kitts and nevis' => 'sc',
                 'saint lucia' => 'st',
-                'saint vincent' => 'vc',        
+                'saint vincent' => 'vc',
                 'the grenadines' => 'vc',
                 'saint vincent and the grenadines' => 'vc',
                 'samoa' => 'ws',
@@ -225,7 +225,7 @@ module Worldfactbook
 
     def code
       if @codes.has_key?(@country)
-        @codes.fetch(@country) 
+        @codes.fetch(@country)
       elsif @codes.has_value?(@country)
         return @country
       else

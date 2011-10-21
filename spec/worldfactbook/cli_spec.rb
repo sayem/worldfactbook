@@ -10,7 +10,7 @@ describe Worldfactbook::CLI, "execute" do
       @stdout_io.rewind
       @stdout = @stdout_io.read
     end
-  
+
     it "should report help commands" do
       @stdout.should =~ /https:\/\/github.com\/sayem\/worldfactbook\/wiki/
     end
@@ -23,7 +23,7 @@ describe Worldfactbook::CLI, "execute" do
       @stdout_io.rewind
       @stdout = @stdout_io.read
     end
-  
+
     it "should report the list of available countries" do
       @stdout.should =~ /List of available countries/
       @stdout.should =~ /jamaica/
@@ -37,7 +37,7 @@ describe Worldfactbook::CLI, "execute" do
       @stdout_io.rewind
       @stdout = @stdout_io.read
     end
-  
+
     it "should report data" do
       @stdout.should =~ /Location: North America/
       @stdout.should =~ /New York/
@@ -68,5 +68,5 @@ describe Worldfactbook::CLI, "execute" do
       }.should raise_error(Worldfactbook::NoCountryAvailable)
     end
   end
-  
+
 end
