@@ -255,6 +255,14 @@ describe "Worldfactbook::Country" do
       @country.political.should =~ /Party/
     end
 
+    it "should find the flag description" do
+      @country.flag_description.should =~ /13 equal horizontal stripes/
+    end
+
+    it "should find the national symbols" do
+      puts @country.national_symbols
+      @country.national_symbols.should =~ /bald eagle/
+    end
 
     ## ECONOMY ##    
 
