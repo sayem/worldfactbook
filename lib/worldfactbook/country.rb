@@ -271,6 +271,7 @@ module Worldfactbook
       end
     end
 
+
     def political
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(44) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
@@ -279,7 +280,30 @@ module Worldfactbook
       end
     end
 
-    
+    def flag_description
+      if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      else
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(50) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+      end
+    end
+
+    def national_symbols
+      if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(56) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+       else
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+       end
+     end
+
+    def national_anthem
+      if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(59) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+       else
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(56) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+       end
+    end
+
     ## ECONOMY ##    
 
     def economy_overview 
