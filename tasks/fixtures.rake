@@ -11,5 +11,7 @@ namespace :fixtures do
       end
       
     end
+
+    puts "done"
   end
 end

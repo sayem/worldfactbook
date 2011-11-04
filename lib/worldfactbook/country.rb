@@ -9,7 +9,6 @@ module Worldfactbook
       @code = CountryCode.new(@country).code
       @ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
       @wfb_location = "http://rubyworldfactbook.com"
-
     end
 
     def countries
