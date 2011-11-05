@@ -92,34 +92,34 @@ module Worldfactbook
     ## PEOPLE ##
 
     def population
-      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(2) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
-    end
-
-    def age_structure
-      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(5) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
-    end
-
-    def median_age
-      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(8) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
-    end
-
-    def population_growth
-      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(11) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
-    end
-
-    def birth_rate
       (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(14) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
+    def age_structure
+      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(17) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+    end
+
+    def median_age
+      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+    end
+
+    def population_growth 
+      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+    end
+
+    def birth_rate
+      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(26) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+    end
+
     def death_rate
-      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(17) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def net_migration
       if ['xx'].include?(@code)
         return nil
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -129,7 +129,7 @@ module Worldfactbook
       elsif ['xx'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(20) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(35) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
     
@@ -137,7 +137,7 @@ module Worldfactbook
       if ['ee', 'xx'].include?(@code)
         return nil
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(26) .category_data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(38) .category_data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -145,7 +145,7 @@ module Worldfactbook
       if ['ee', 'xx'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(23) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(41) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -153,7 +153,7 @@ module Worldfactbook
       if ['ee', 'xx'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(26) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(47) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -161,7 +161,7 @@ module Worldfactbook
       if ['ee', 'xx'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(29) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(35) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(50) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -169,7 +169,7 @@ module Worldfactbook
       if ['ee', 'xx'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(32) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(38) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -179,7 +179,7 @@ module Worldfactbook
       elsif ['ee', 'xx'].include?(@code)
         return nil
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(59) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(5) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -191,7 +191,7 @@ module Worldfactbook
       elsif ['ee'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(44) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(62) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(11) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -203,7 +203,7 @@ module Worldfactbook
       elsif ['ee'].include?(@code)
         (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(47) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(65) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(8) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -215,7 +215,7 @@ module Worldfactbook
       elsif ['ee'].include?(@code)
         return nil
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(68) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_People tr:nth-child(89) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
       end
     end
 
@@ -234,7 +234,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(17) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(14) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(17) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -242,7 +242,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(26) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(23) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(26) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -250,7 +250,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(32) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -258,7 +258,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(35) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -266,7 +266,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(38) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -275,7 +275,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(44) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(41) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(44) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -283,7 +283,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       else
-        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(50) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+        (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
       end
     end
 
@@ -291,7 +291,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
          (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(56) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
        else
-         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(56) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
        end
      end
 
@@ -299,7 +299,7 @@ module Worldfactbook
       if (@ic.iconv(doc.to_s + ' ')[0..-2]).match("Definitions and Notes: Dependent areas")
          (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(59) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
        else
-         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(56) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
+         (@ic.iconv(doc.css('#CollapsiblePanel1_Govt tr:nth-child(59) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/[\r\t\n]/,'').strip
        end
     end
 
@@ -338,23 +338,23 @@ module Worldfactbook
     end
 
     def inflation 
-      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(47) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(53) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def markets
-      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(65) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(71) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def exports 
-      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(122) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(128) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def imports 
-      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(131) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(137) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def debt
-      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(143) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
+      (@ic.iconv(doc.css('#CollapsiblePanel1_Econ tr:nth-child(149) #data').text + ' ')[0..-2]).squeeze(' ').gsub(/ \n \n /,'; ').gsub(/[\r\t\n]/,'').squeeze(' ').strip
     end
 
     def military

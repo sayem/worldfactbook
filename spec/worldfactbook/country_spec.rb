@@ -260,7 +260,6 @@ describe "Worldfactbook::Country" do
     end
 
     it "should find the national symbols" do
-      puts @country.national_symbols
       @country.national_symbols.should =~ /bald eagle/
     end
 
