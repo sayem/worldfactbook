@@ -21,8 +21,8 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{Easily access all the statistics and economic data available on the CIA World Factbook.}
   gem.description = %Q{Easily use Ruby or the command line to look up any country on the CIA World Factbook.}
-  gem.email = "sayem.islam@gmail.com"
-  gem.authors = ["Sayem Islam"]
+  gem.email = "mail@sayemkhan.com"
+  gem.authors = ["Sayem Khan"]
 
   # Dependencies
   gem.add_dependency('nokogiri')
